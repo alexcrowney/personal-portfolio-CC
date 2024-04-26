@@ -1,0 +1,25 @@
+body {
+    border: 0;
+    background-color: #edaa9a;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .flex-container {
+    display: flex;
+    height: 50px;
+  }
+
+  .navigation-items {
+    margin-right: 2rem;
+  }
+
+  li {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border: 3px solid #181210;
+    background-color: #edbb9a;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 50px;
+  }
