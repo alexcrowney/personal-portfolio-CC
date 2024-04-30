@@ -5,7 +5,8 @@
   --first-color:#fda403bb;
   --second-color:#e8751abb;
   --third-color:#c51350bb;
-  --fourth-color:#8a1253bb; 
+  --fourth-color:#8a1253bb;
+  --fifth-color: #96ceb4bb; 
   --text-color: #2b373f; 
 }
 
@@ -161,4 +162,12 @@ footer {
   font-size: 1.25rem;
   color:honeydew;
   text-align: center;
+}
+
+/* CONTACT PAGE */
+#contact-page {
+  background-color: var(--fifth-color);
+  height: 21.5rem;
+  padding: 5rem 2rem;
+  font-size: 1.5rem;
 }
