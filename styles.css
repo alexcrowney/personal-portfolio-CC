@@ -3,25 +3,24 @@
 
 /* COLOR PALETTE */
 :root {
-  --first-color: #fda403bb;
-  --second-color: #e8751abb;
-  --third-color: #c51350bb;
-  --fourth-color: #8a1253bb;
-  --fifth-color: #96ceb4bb;
+  --first-color: #fda403aa;
+  --second-color: #e8751aaa;
+  --third-color: #c51350aa;
+  --fourth-color: #8a1253aa;
+  --fifth-color: #96ceb4aa;
   --text-color: #2b373f;
   /* night mode*/
-  --night-first-color: #070F2B;
-  --night-second-color: #1B1A55;
-  --night-third-color: #535C91;
-  --night-fourth-color: #9290C3;
-  --night-fifth-color: #2D3D36;
-  --night-text-color: #F9F1F1;
+  --night-first-color: #070f2b;
+  --night-second-color: #1b1a55;
+  --night-third-color: #535c91;
+  --night-fourth-color: #9290c3;
+  --night-fifth-color: #2d3d36;
+  --night-text-color: #f9f1f1;
 }
 
-
-/* * {
+* {
   border: red solid 1px;
-} */
+}
 
 html {
   scroll-behavior: smooth;
@@ -37,6 +36,10 @@ body {
   display: block;
 }
 
+body.night-mode {
+  color: var(--night-text-color);
+}
+
 /* HEADER */
 nav {
   background-color: var(--first-color);
@@ -44,6 +47,10 @@ nav {
   display: flex;
   align-items: center;
   padding: 0.5rem 0;
+}
+
+nav.night-mode {
+  background-color: var(--night-first-color);
 }
 
 #left-side-header {
@@ -62,12 +69,21 @@ nav {
   height: 100%;
 }
 
+#nav-logo.night-mode {
+  filter: invert(100%);
+}
+
 button {
   height: 20%;
   width: 20%;
   border-radius: 30%;
   background-color: midnightblue;
   color: honeydew;
+}
+
+button.night-mode {
+  background-color: var(--night-fourth-color);
+  color: var(--night-text-color);
 }
 
 nav ul {
@@ -83,17 +99,28 @@ nav ul {
   padding: 0;
 }
 
-nav a {
+#nav-list a {
   text-decoration: none;
   color: var(--text-color);
+}
+
+#nav-list a.night-mode {
+  color: var(--night-text-color);
 }
 
 /* ABOUT ME */
 #about-me {
   background-color: var(--second-color);
   display: flex;
+  flex-direction: row;
   height: 25rem;
   padding: 2rem;
+
+  /* overflow: auto; */
+}
+
+#about-me.night-mode {
+  background-color: var(--night-second-color);
 }
 
 .split-text {
@@ -118,10 +145,19 @@ nav a {
   box-shadow: 6px 6px 3.5px 0px var(--text-color);
 }
 
+.split-photo img.night-mode {
+  border: var(--night-fourth-color) solid 5px;
+  box-shadow: 6px 6px 3.5px 0px var(--night-text-color);
+}
+
 /* PROJECTS */
 #projects {
   background-color: var(--third-color);
   font-size: 1.5rem;
+}
+
+#projects.night-mode {
+  background-color: var(--night-third-color);
 }
 
 #projects h1 {
@@ -161,6 +197,10 @@ nav a {
   display: block;
 }
 
+#skills.night-mode {
+  background-color: var(--night-fourth-color);
+}
+
 #skills h1 {
   padding: 2rem;
   font-size: 2rem;
@@ -190,10 +230,48 @@ footer {
   text-align: center;
 }
 
+footer.night-mode {
+  color: var(--night-text-color);
+}
+
 /* CONTACT PAGE */
 #contact-page {
   background-color: var(--fifth-color);
   height: 21.5rem;
   padding: 5rem 2rem;
   font-size: 1.5rem;
+}
+
+#contact-page.night-mode {
+  background-color: var(--night-fifth-color);
+}
+
+@media only screen and (max-width: 1036px) {
+  #about-me {
+    flex-direction: column;
+    height: max-content;
+    align-items: center;
+  }
+
+  .split-text {
+    width: 100%;
+  }
+
+  .split-photo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    overflow: auto;
+  }
+
+  #about-me .split-text,
+  #projects,
+  #skills,
+  #skills-container,
+  footer {
+    font-size: 1.3rem;
+  }
 }

@@ -10,11 +10,15 @@
     />
     <title>Personal Portfolio</title>
   </head>
-  <body>
+  <body onload="checkWhichMode()">
     <nav id="navbar">
       <div id="left-side-header">
         <img id="nav-logo" src="/images/AlexLogo.png" alt="Alex Logo" />
-        <button type="button" class="fas fa-moon"></button>
+        <button
+          type="button"
+          class="fas fa-moon"
+          onclick="toggleNightMode(); checkWhichMode()"
+        ></button>
       </div>
       <ul id="nav-list">
         <li><a href="/index.html">Home</a></li>
@@ -24,14 +28,14 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <main id="contact-page">
-      <h1>Get in touch!</h1>
-      <p><b>email...</b> alex@alex.com</p>
-      <p><b>phone...</b> 07744704716</p>
+    <main>
+      <section id="contact-page">
+        <h1>Get in touch!</h1>
+        <p><b>email...</b> alex@alex.com</p>
+        <p><b>phone...</b> 07744704716</p>
+      </section>
     </main>
-    <footer>
-      Made in Levenshulme
-    </footer>
+    <footer>Made in Levenshulme</footer>
     <script src="/script.js"></script>
   </body>
 </html>
